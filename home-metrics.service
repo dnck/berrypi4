@@ -1,0 +1,11 @@
+[Unit]
+Description=Flask Server to Fetch the Indoor Temp
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/dnck/berrypi4/
+ExecStart=/home/dnck/berrypi4/bin/python3.9 /home/dnck/berrypi4/home.py
+Type=idle
+
+[Install]
+WantedBy=multi-user.target

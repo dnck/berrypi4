@@ -1,0 +1,15 @@
+[Unit]
+Description=Prometheus Server
+Documentation=https://prometheus.io/docs/introduction/overview/
+After=network-online.target
+
+[Service]
+User=dnck
+Restart=on-failure
+
+ExecStart=/home/dnck/prometheus/prometheus \
+  --config.file=/home/dnck/prometheus/prometheus.yml \
+  --storage.tsdb.path=/home/dnck/prometheus/data
+
+[Install]
+WantedBy=multi-user.target
